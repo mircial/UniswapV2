@@ -18,7 +18,7 @@ contract token {
     using SafeMath for uint;
 
     string public constant name = 'Test Token';
-    string public constant symbol;
+    string public  symbol;
     uint8 public constant decimals = 18;
     uint  public totalSupply;
     mapping(address => uint) public balanceOf;
@@ -32,7 +32,7 @@ contract token {
     event Approval(address indexed owner, address indexed spender, uint value);
     event Transfer(address indexed from, address indexed to, uint value);
 
-    constructor(uint _totalSupply, string _symbol) public {
+    constructor(uint _totalSupply, string memory _symbol) public {
         uint chainId;
         assembly {
             chainId := chainid()
